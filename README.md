@@ -356,7 +356,7 @@ Membuat subdomain melalui Water7 dengan nama general.mecha.franky.yyy.com dengan
   ```
   
 - Loguetown dan Alabasta<br>
-  ```ping www.general.mecha.franky.A03.com```
+  ```ping general.mecha.franky.A03.com```
   ![image](https://user-images.githubusercontent.com/68326540/138806581-d2dd255c-7215-4b43-9cab-ec6b8e67ed22.png)<br>
   ```ping www.general.mecha.franky.A03.com```
   ![image](https://user-images.githubusercontent.com/68326540/138806621-3a276c24-ca5d-4876-856a-40ee47e28c74.png)
