@@ -370,24 +370,24 @@ Setelah melakukan konfigurasi server, maka dilakukan konfigurasi Webserver. Pert
   git config --global http.sslVerify false
   git clone https://github.com/FeinardSlim/Praktikum-Modul-2-Jarkom.git
   ```
- - Melakukan unzip ke semua file zip yang terdapat pada direktori hasil clone
- - Memindahkan hasil direktori unzip ke direktori /var/www
+  - Melakukan unzip ke semua file zip yang terdapat pada direktori hasil clone
+  - Memindahkan hasil direktori unzip ke direktori /var/www
  ```
  cp -r Praktikum-Modul-2-Jarkom/franky /var/www/
  cp -r Praktikum-Modul-2-Jarkom/super.franky /var/www/
  cp -r Praktikum-Modul-2-Jarkom/general.mecha.franky /var/www/
  ```
- - Merename folder sesuai nama yang diminta
+  - Merename folder sesuai nama yang diminta
  ```
  mv /var/www/franky /var/www/franky.A03.com
  mv /var/www/super.franky /var/www/super.franky.A03.com
  mv /var/www/general.mecha.franky.A03.com /var/www/general.mecha.franky.A03.com
  ```
- - Mencopy /etc/apache2/sites-available/000-default.conf dengan tujuan /etc/apache2/sites-available/franky.A03.com.conf
-```
-cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/franky.A03.com.conf
-```
- - Mengubah file /etc/apache2/sites-available/franky.A03.com.conf
+  - Mencopy /etc/apache2/sites-available/000-default.conf dengan tujuan /etc/apache2/sites-available/franky.A03.com.conf
+  ```
+  cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/franky.A03.com.conf
+  ```
+  - Mengubah file /etc/apache2/sites-available/franky.A03.com.conf
  ```
   nano /etc/apache2/sites-available/franky.A03.com.conf
  ```
