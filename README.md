@@ -363,7 +363,7 @@ Membuat subdomain melalui Water7 dengan nama general.mecha.franky.yyy.com dengan
 
 ## Soal 8
 Setelah melakukan konfigurasi server, maka dilakukan konfigurasi Webserver. Pertama dengan webserver www.franky.yyy.com. Pertama, luffy membutuhkan webserver dengan DocumentRoot pada /var/www/franky.yyy.com.
-- Skypie<br>
+### Skypie<br>
   - Melakukan clone pada repository yang telah disediakan
   ```
   apt-get install git
@@ -402,7 +402,7 @@ Setelah melakukan konfigurasi server, maka dilakukan konfigurasi Webserver. Pert
   service apache2 restart
   a2ensite franky.A03.com
   ```
-- Loguetown<br>
+### Loguetown<br>
   - Connect server skypie
   ```
   echo "# nameserver 192.168.122.1
