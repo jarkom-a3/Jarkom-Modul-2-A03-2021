@@ -362,14 +362,70 @@ Membuat subdomain melalui Water7 dengan nama general.mecha.franky.yyy.com dengan
   ![image](https://user-images.githubusercontent.com/68326540/138806621-3a276c24-ca5d-4876-856a-40ee47e28c74.png)
 
 ## Soal 8
-
+Setelah melakukan konfigurasi server, maka dilakukan konfigurasi Webserver. Pertama dengan webserver www.franky.yyy.com. Pertama, luffy membutuhkan webserver dengan DocumentRoot pada /var/www/franky.yyy.com.
+- Skypie<br>
+  - Melakukan clone pada repository yang telah disediakan
+  ```
+  apt-get install git
+  git config --global http.sslVerify false
+  git clone https://github.com/FeinardSlim/Praktikum-Modul-2-Jarkom.git
+  ```
+ - Melakukan unzip ke semua file zip yang terdapat pada direktori hasil clone
+ - Memindahkan hasil direktori unzip ke direktori /var/www
+ ```
+ cp -r Praktikum-Modul-2-Jarkom/franky /var/www/
+ cp -r Praktikum-Modul-2-Jarkom/super.franky /var/www/
+ cp -r Praktikum-Modul-2-Jarkom/general.mecha.franky /var/www/
+ ```
+ - Merename folder sesuai nama yang diminta
+ ```
+ mv /var/www/franky /var/www/franky.A03.com
+ mv /var/www/super.franky /var/www/super.franky.A03.com
+ mv /var/www/general.mecha.franky.A03.com /var/www/general.mecha.franky.A03.com
+ ```
+ - Mencopy /etc/apache2/sites-available/000-default.conf dengan tujuan /etc/apache2/sites-available/franky.A03.com.conf
+```
+cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/franky.A03.com.conf
+```
+ - Mengubah file /etc/apache2/sites-available/franky.A03.com.conf
+ ```
+  nano /etc/apache2/sites-available/franky.A03.com.conf
+ ```
+  - Mengubah ServerName, ServerAlias, DocumentRoot 
+  ```
+  ServerName franky.A03.com
+  ServerAlias www.franky.A03.com
+  DocumentRoot /var/www/franky.A03.com
+  ```
+  - Restart server
+  ```
+  service apache2 restart
+  a2ensite franky.A03.com
+  ```
+- Loguetown<br>
+  - Connect server skypie
+  ```
+  echo "# nameserver 192.168.122.1
+  nameserver 192.170.2.2
+  nameserver 192.170.2.3" > /etc/resolv.conf
+  ```
+  - Mengakses www.franky.A03.com
+  ```
+  lynx http://www.franky.A03.com
+  ```
+  
+  
 ## Soal 9
+Setelah itu, Luffy juga membutuhkan agar url www.franky.yyy.com/index.php/home dapat menjadi menjadi www.franky.yyy.com/home. 
 
 ## Soal 10
+Setelah itu, pada subdomain www.super.franky.yyy.com, Luffy membutuhkan penyimpanan aset yang memiliki DocumentRoot pada /var/www/super.franky.yyy.com
 
 ## Soal 11
+Akan tetapi, pada folder /public, Luffy ingin hanya dapat melakukan directory listing saja.
 
 ## Soal 12
+Tidak hanya itu, Luffy juga menyiapkan error file 404.html pada folder /error untuk mengganti error kode pada apache
 
 ## Soal 13
 
