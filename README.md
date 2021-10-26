@@ -202,7 +202,7 @@ Membuat reverse domain untuk domain utama
                            604800 )       ; Negative Cache TTL
   ;
   2.170.192.in-addr.arpa.       IN      NS      franky.A03.com.
-  2      IN      PTR       franky.A03.com.
+  4      IN      PTR       franky.A03.com.
   " >> /etc/bind/kaizoku/2.170.192.in-addr.arpa
 
   service bind9 restart
