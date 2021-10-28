@@ -9,6 +9,7 @@
 | Ryan Fernaldy | 05111940000152 |
 
 ## Soal 1
+EniesLobby akan dijadikan sebagai DNS Master, Water7 akan dijadikan DNS Slave, dan Skypie akan digunakan sebagai Web Server. Terdapat 2 Client yaitu Loguetown, dan Alabasta. Semua node terhubung pada router Foosha, sehingga dapat mengakses internet
 - Konfigurasi Topologi GNS3
   - Foosha
     ```
@@ -110,6 +111,9 @@
   apt-get install dnsutils -y
   apt-get install lynx -y
   ```
+- Semua node dapat mengakses ke internet<br>
+  ```ping google.com```<br>
+  ![image](https://user-images.githubusercontent.com/68326540/139208695-46318b1e-38ee-4c75-ae65-afec22a1c64c.png)
 
 ## Soal 2
 Membuat domain website utama franky.yyy.com dengan alias www.franky.yyy.com pada folder kaizoku di EniesLobby.
@@ -433,7 +437,7 @@ Setelah itu, Luffy juga membutuhkan agar url www.franky.yyy.com/index.php/home d
 ### Loguetown<br>
   - Mengakses www.franky.A03.com/home
   ```
-  lynx http://www.franky.A03.com/home
+  lynx www.franky.A03.com/home
   ```
   
 ## Soal 10
@@ -497,9 +501,9 @@ Tidak hanya itu, Luffy juga menyiapkan error file 404.html pada folder /error un
   </Files>
   ```
 ### Loguetown<br>
-  - Mengakses www.super.franky.A03.com/eror
+  - Mengakses www.super.franky.A03.com/abcdef
   ```
-  lynx http://www.super.franky.A03.com/eror
+  lynx http://www.super.franky.A03.com/abcdef
   ```
 
 ## Soal 13
