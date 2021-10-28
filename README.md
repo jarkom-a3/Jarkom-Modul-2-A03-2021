@@ -491,7 +491,7 @@ Tidak hanya itu, Luffy juga menyiapkan error file 404.html pada folder /error un
   ErrorDocument 404 /error/404.html
   
   <Files "404.html">
-      <If "-z %{ENV:REDIRECT_STATUS>
+      <If "-z %{ENV:REDIRECT_STATUS">
             RedirectMatch 404 ^/404.html$
       </If>
   </Files>
