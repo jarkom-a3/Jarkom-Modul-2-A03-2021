@@ -521,9 +521,13 @@ Luffy juga meminta Nami untuk dibuatkan konfigurasi virtual host. Virtual host i
  ![image](https://user-images.githubusercontent.com/62937814/139184044-70bf9b73-cc28-44b4-aa7f-99ab7a366d49.png)
 
 ## Soal 14
+Dan Luffy meminta untuk web www.general.mecha.franky.yyy.com hanya bisa diakses dengan port 15000 dan port 15500
 
 ## Soal 15
+dengan autentikasi username luffy dan password onepiece dan file di /var/www/general.mecha.franky.yyy
 
 ## Soal 16
+Dan setiap kali mengakses IP Skypie akan dialihkan secara otomatis ke www.franky.yyy.com
 
 ## Soal 17
+Dikarenakan Franky juga ingin mengajak temannya untuk dapat menghubunginya melalui website www.super.franky.yyy.com, dan dikarenakan pengunjung web server pasti akan bingung dengan randomnya images yang ada, maka Franky juga meminta untuk mengganti request gambar yang memiliki substring “franky” akan diarahkan menuju franky.png. Maka bantulah Luffy untuk membuat konfigurasi dns dan web server ini!
