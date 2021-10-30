@@ -730,7 +730,7 @@ Isi dari `/etc/apache2/.htpasswd`
 ## Soal 16
 Dan setiap kali mengakses IP Skypie akan dialihkan secara otomatis ke www.franky.yyy.com
 
-1. Pada node Skypie, buat file `.16htaccess` dengan isi sebagai berikut. `RewriteCond` menggunakan ip 192.170.2.4 (Skypie) dan `RewriteRule`
+1. Pada node Skypie, buat file `.16htaccess` dengan isi sebagai berikut.
 
 ```
 RewriteEngine On
