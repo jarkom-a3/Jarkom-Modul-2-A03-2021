@@ -694,7 +694,7 @@ lynx www.general.mecha.franky.A03.com:15500
 ## Soal 15
 dengan autentikasi username luffy dan password onepiece dan file di /var/www/general.mecha.franky.yyy
 
-1. Buat user baru dengan nama `luffy` dengan password `onepiece`.
+1. Pada node Skypie, buat user baru dengan nama `luffy` dengan password `onepiece`.
 
 ```
 htpasswd -c /etc/apache2/.htpasswd luffy
@@ -859,3 +859,32 @@ lynx 192.170.2.4
 
 ## Soal 17
 Dikarenakan Franky juga ingin mengajak temannya untuk dapat menghubunginya melalui website www.super.franky.yyy.com, dan dikarenakan pengunjung web server pasti akan bingung dengan randomnya images yang ada, maka Franky juga meminta untuk mengganti request gambar yang memiliki substring “franky” akan diarahkan menuju franky.png. Maka bantulah Luffy untuk membuat konfigurasi dns dan web server ini!
+
+1. Pada node Skypie, buat file `.htaccess` pada direktori `/var/www/super.franky.A03.com/`. Isi dari `.htaccess` adalah sebagai berikut.
+
+```
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_URI} !\bfranky.png\b
+RewriteRule franky http://super.franky.A03.com/public/images/franky.png$1 [L,R=301]
+```
+
+2. Tambahkan line `AllowOverride All` pada `<Directory /var/www/super.franky.A03.com>` dalam `<VirtualHost *:80>` di `/etc/apache2/sites-available/super.franky.A03.com.conf`.
+
+```
+        <Directory /var/www/super.franky.A03.com>
+                Options +Indexes
+                AllowOverride All
+        </Directory>
+```
+
+3. Restart Apache
+
+```
+service apache2 restart
+a2enmod rewrite
+```
+
+4. Coba request gambar yang memiliki substring "franky".
+
+![frankyimage](https://user-images.githubusercontent.com/58259649/139532196-9f43ddeb-6649-4ae5-804d-cc36e25c74fe.jpg)
