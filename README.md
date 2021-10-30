@@ -527,6 +527,112 @@ Luffy juga meminta Nami untuk dibuatkan konfigurasi virtual host. Virtual host i
 ## Soal 14
 Dan Luffy meminta untuk web www.general.mecha.franky.yyy.com hanya bisa diakses dengan port 15000 dan port 15500
 
+1. Pada node `Skypie`, buat file bernama `general.mecha.franky.A03.com.conf` dengan isi seperti di bawah. Dalam `<VirtualHost *:15000>` dan `<VirtualHost *:15500>` jadikan `general.mecha.franky.A03.com` sebagai `ServerName`, `www.general.mecha.franky.A03.com` sebagai `ServerAlias`, dan `/var/www/general.mecha.franky.A03.com` sebagai `DocumentRoot`.
+
+```
+<VirtualHost *:15000>
+        # The ServerName directive sets the request scheme, hostname and port t$
+        # the server uses to identify itself. This is used when creating
+        # redirection URLs. In the context of virtual hosts, the ServerName
+        # specifies what hostname must appear in the request's Host: header to
+        # match this virtual host. For the default virtual host (this file) this
+        # value is not decisive as it is used as a last resort host regardless.
+        # However, you must set it for any further virtual host explicitly.
+        ServerName general.mecha.franky.A03.com
+        ServerAlias www.general.mecha.franky.A03.com
+
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/general.mecha.franky.A03.com
+
+        # Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
+        # error, crit, alert, emerg.
+        # It is also possible to configure the loglevel for particular
+        # modules, e.g.
+        #LogLevel info ssl:warn
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+        # For most configuration files from conf-available/, which are
+        # enabled or disabled at a global level, it is possible to
+        # include a line for only one particular virtual host. For example the
+        # following line enables the CGI configuration for this host only
+        # after it has been globally disabled with "a2disconf".
+        #Include conf-available/serve-cgi-bin.conf
+</VirtualHost>
+
+<VirtualHost *:15500>
+        # The ServerName directive sets the request scheme, hostname and port t$
+        # the server uses to identify itself. This is used when creating
+        # redirection URLs. In the context of virtual hosts, the ServerName
+        # specifies what hostname must appear in the request's Host: header to
+        # match this virtual host. For the default virtual host (this file) this
+        # value is not decisive as it is used as a last resort host regardless.
+        # However, you must set it for any further virtual host explicitly.
+        ServerName general.mecha.franky.A03.com
+        ServerAlias www.general.mecha.franky.A03.com
+
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/general.mecha.franky.A03.com
+
+        # Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
+        # error, crit, alert, emerg.
+        # It is also possible to configure the loglevel for particular
+        # modules, e.g.
+        #LogLevel info ssl:warn
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+        # For most configuration files from conf-available/, which are
+        # enabled or disabled at a global level, it is possible to
+        # include a line for only one particular virtual host. For example the
+        # following line enables the CGI configuration for this host only
+        # after it has been globally disabled with "a2disconf".
+        #Include conf-available/serve-cgi-bin.conf
+</VirtualHost>
+```
+
+2. Copy file di atas ke directory `/etc/apache2/sites-available/`.
+
+```
+cp general.mecha.franky.A03.com.conf /etc/apache2/sites-available/general.mecha.franky.A03.com.conf
+```
+
+3. Enable site `general.mecha.franky.A03.com`.
+
+```
+a2ensite general.mecha.franky.A03.com
+```
+
+4. Tambahkan port 15000 dan 15500 yang akan di-listen ke `/etc/apache2/ports.conf`
+
+```
+echo Listen 15000 >> /etc/apache2/ports.conf
+echo Listen 15500 >> /etc/apache2/ports.conf
+
+```
+
+5. Restart apache2
+
+```
+service apache2 restart
+```
+
+6. Periksa apakah dapat mengakses melalui port 15000 dan port 15500
+
+```
+lynx www.general.mecha.franky.A03.com:15000
+```
+
+![15000](https://user-images.githubusercontent.com/58259649/139525735-9a42ea93-bc13-4ba6-a373-fa06be1aced7.png)
+
+```
+lynx www.general.mecha.franky.A03.com:15500
+```
+
+![15500](https://user-images.githubusercontent.com/58259649/139525765-5102f563-376e-455f-9ceb-ced6e5c5a266.png)
+
 ## Soal 15
 dengan autentikasi username luffy dan password onepiece dan file di /var/www/general.mecha.franky.yyy
 
