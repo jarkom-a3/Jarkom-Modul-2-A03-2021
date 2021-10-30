@@ -527,7 +527,7 @@ Luffy juga meminta Nami untuk dibuatkan konfigurasi virtual host. Virtual host i
 ## Soal 14
 Dan Luffy meminta untuk web www.general.mecha.franky.yyy.com hanya bisa diakses dengan port 15000 dan port 15500
 
-1. Pada node `Skypie`, buat file bernama `general.mecha.franky.A03.com.conf` dengan isi seperti di bawah. Dalam `<VirtualHost *:15000>` dan `<VirtualHost *:15500>` jadikan `general.mecha.franky.A03.com` sebagai `ServerName`, `www.general.mecha.franky.A03.com` sebagai `ServerAlias`, dan `/var/www/general.mecha.franky.A03.com` sebagai `DocumentRoot`.
+1. Pada node Skypie, buat file bernama `general.mecha.franky.A03.com.conf` dengan isi seperti di bawah. Dalam `<VirtualHost *:15000>` dan `<VirtualHost *:15500>` jadikan `general.mecha.franky.A03.com` sebagai `ServerName`, `www.general.mecha.franky.A03.com` sebagai `ServerAlias`, dan `/var/www/general.mecha.franky.A03.com` sebagai `DocumentRoot`.
 
 ```
 <VirtualHost *:15000>
@@ -643,7 +643,7 @@ dengan autentikasi username luffy dan password onepiece dan file di /var/www/gen
 ## Soal 16
 Dan setiap kali mengakses IP Skypie akan dialihkan secara otomatis ke www.franky.yyy.com
 
-1. Buat file `.16htaccess` dengan isi sebagai berikut. `RewriteCond` menggunakan ip 192.170.2.4 (Skypie) dan `RewriteRule`
+1. Pada node Skypie, buat file `.16htaccess` dengan isi sebagai berikut. `RewriteCond` menggunakan ip 192.170.2.4 (Skypie) dan `RewriteRule`
 
 ```
 RewriteEngine On
