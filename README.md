@@ -633,11 +633,146 @@ lynx www.general.mecha.franky.A03.com:15500
 
 ![15500](https://user-images.githubusercontent.com/58259649/139525765-5102f563-376e-455f-9ceb-ced6e5c5a266.png)
 
+### Kendala
+
+* tidak ada
+
 ## Soal 15
 dengan autentikasi username luffy dan password onepiece dan file di /var/www/general.mecha.franky.yyy
 
 ## Soal 16
 Dan setiap kali mengakses IP Skypie akan dialihkan secara otomatis ke www.franky.yyy.com
+
+1. Buat file `.16htaccess` dengan isi sebagai berikut. `RewriteCond` menggunakan ip 192.170.2.4 (Skypie) dan `RewriteRule`
+
+```
+RewriteEngine On
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^192\.170\.2\.4$
+RewriteRule ^(.*)$ http://www.franky.A03.com/$1 [L,R=301]
+```
+
+2. Buat file `16.franky.A03.com.conf` dengan isi seperti di bawah. Gunakan `franky.A03.com` sebagai `ServerName`, `www.franky.A03.com` sebagai `ServerAlias`, `/var/www/franky.A03.com` sebagai `DocumentRoot` dan `Alias "/home" "/var/www/franky.A03.com/index.php/home"`. Dalam `<Directory /var/www/franky.A03.com>` tambahkan `Options +FollowSymLinks -Multiviews` dan `AllowOverride All`.
+
+```
+<VirtualHost *:80>
+        # The ServerName directive sets the request scheme, hostname and port that
+        # the server uses to identify itself. This is used when creating
+        # redirection URLs. In the context of virtual hosts, the ServerName
+        # specifies what hostname must appear in the request's Host: header to
+        # match this virtual host. For the default virtual host (this file) this
+        # value is not decisive as it is used as a last resort host regardless.
+        # However, you must set it for any further virtual host explicitly.
+        ServerName franky.A03.com
+        ServerAlias www.franky.A03.com
+
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/franky.A03.com
+        Alias "/home" "/var/www/franky.A03.com/index.php/home"
+
+        <Directory /var/www/franky.A03.com>
+                Options +FollowSymLinks -Multiviews
+                AllowOverride All
+        </Directory>
+        # Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
+        # error, crit, alert, emerg.
+        # It is also possible to configure the loglevel for particular
+        # modules, e.g.
+        #LogLevel info ssl:warn
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+        # For most configuration files from conf-available/, which are
+        # enabled or disabled at a global level, it is possible to
+        # include a line for only one particular virtual host. For example the
+        # following line enables the CGI configuration for this host only
+        # after it has been globally disabled with "a2disconf".
+        #Include conf-available/serve-cgi-bin.conf
+</VirtualHost>
+```
+
+3. Buat file `000-default.conf` dengan isi sebagai berikut. Gunakan `www.franky.A03.com` sebagai `ServerName` dan `/var/www/franky.A03.com` sebagai `DocumentRoot`.
+
+```
+<VirtualHost *:80>
+        # The ServerName directive sets the request scheme, hostname and port that
+        # the server uses to identify itself. This is used when creating
+        # redirection URLs. In the context of virtual hosts, the ServerName
+        # specifies what hostname must appear in the request's Host: header to
+        # match this virtual host. For the default virtual host (this file) this
+        # value is not decisive as it is used as a last resort host regardless.
+        # However, you must set it for any further virtual host explicitly.
+
+
+        ServerName www.franky.A03.com
+
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/franky.A03.com
+
+        # Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
+        # error, crit, alert, emerg.
+        # It is also possible to configure the loglevel for particular
+        # modules, e.g.
+        #LogLevel info ssl:warn
+
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+        # For most configuration files from conf-available/, which are
+        # enabled or disabled at a global level, it is possible to
+        # include a line for only one particular virtual host. For example the
+        # following line enables the CGI configuration for this host only
+        # after it has been globally disabled with "a2disconf".
+        #Include conf-available/serve-cgi-bin.conf
+</VirtualHost>
+```
+
+4. Enable modul mod_rewrite untuk Apache.
+
+```
+a2enmod rewrite
+```
+
+5. Restart Apache.
+
+```
+service apache2 restart
+```
+
+6. Copy `.16htaccess` ke `/var/www/franky.A03.com/` dengan nama `.htaccess`.
+
+```
+cp .16htaccess /var/www/franky.A03.com/.htaccess
+```
+
+7. Copy `16.franky.A03.com.conf` ke `/etc/apache2/sites-available/` dengan nama `franky.A03.com.conf`.
+
+```
+cp 16.franky.A03.com.conf /etc/apache2/sites-available/franky.A03.com.conf
+```
+
+8. Ubah `/etc/apache2/sites-available/000-default.conf` dengan `000-default.conf` yang terbaru.
+
+```
+a2dissite 000-default.conf
+service apache2 restart
+cp 000-default.conf /etc/apache2/sites-available/000-default.conf
+a2ensite 000-default.conf
+service apache2 restart
+```
+
+9. Coba akses IP Skypie.
+
+```
+lynx 192.170.2.4
+```
+
+![16](https://user-images.githubusercontent.com/58259649/139526490-fabce794-b0d1-43a1-b9ba-cfa84f897616.png)
+
+### Kendala
+
+* tidak ada
 
 ## Soal 17
 Dikarenakan Franky juga ingin mengajak temannya untuk dapat menghubunginya melalui website www.super.franky.yyy.com, dan dikarenakan pengunjung web server pasti akan bingung dengan randomnya images yang ada, maka Franky juga meminta untuk mengganti request gambar yang memiliki substring “franky” akan diarahkan menuju franky.png. Maka bantulah Luffy untuk membuat konfigurasi dns dan web server ini!
