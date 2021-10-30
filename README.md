@@ -686,7 +686,7 @@ lynx www.general.mecha.franky.A03.com:15000
 lynx www.general.mecha.franky.A03.com:15500
 ```
 
-![15500](https://user-images.githubusercontent.com/58259649/139525765-5102f563-376e-455f-9ceb-ced6e5c5a266.png)
+![15500](https://user-images.githubusercontent.com/58259649/139531024-cac8a8a8-f89b-492c-a4d9-3f698948fc5c.jpg)
 
 ### Kendala
 
