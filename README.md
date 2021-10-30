@@ -444,6 +444,8 @@ Setelah melakukan konfigurasi server, maka dilakukan konfigurasi Webserver. Pert
   ```
   lynx http://www.franky.A03.com
   ```
+  ![image](https://user-images.githubusercontent.com/68326540/139530573-40da40e7-db24-427a-b6dc-928c8e086f0c.png)
+
 ### Kendala
 
 * tidak ada  
@@ -466,6 +468,7 @@ Setelah itu, Luffy juga membutuhkan agar url www.franky.yyy.com/index.php/home d
   ```
   lynx www.franky.A03.com/home
   ```
+  ![image](https://user-images.githubusercontent.com/68326540/139530600-345e5663-487d-4420-9209-73b90ed3d732.png)
 
 ### Kendala
 
@@ -490,7 +493,8 @@ Setelah itu, pada subdomain www.super.franky.yyy.com, Luffy membutuhkan penyimpa
   ```
   lynx http://www.super.franky.A03.com
   ```
-  
+  ![image](https://user-images.githubusercontent.com/68326540/139530611-239354cf-3b49-4ba0-ae1c-a452997ee44f.png)
+
 ### Kendala
 
 * tidak ada  
@@ -516,6 +520,8 @@ Akan tetapi, pada folder /public, Luffy ingin hanya dapat melakukan directory li
   ```
   lynx http://www.super.franky.A03.com/public
   ```
+  ![image](https://user-images.githubusercontent.com/68326540/139530619-219e1399-fdc0-43af-a90a-5764fcbd7271.png)
+
 ### Kendala
 
 * tidak ada
@@ -542,6 +548,8 @@ Tidak hanya itu, Luffy juga menyiapkan error file 404.html pada folder /error un
   ```
   lynx http://www.super.franky.A03.com/abcdef
   ```
+  ![image](https://user-images.githubusercontent.com/68326540/139530640-1cbe2aa5-817a-43ce-a44d-06550467e77f.png)
+
 ### Kendala
 
 * Bingung mencari syntax yang diperlukan
@@ -563,7 +571,10 @@ Luffy juga meminta Nami untuk dibuatkan konfigurasi virtual host. Virtual host i
   ```
 
  ![image](https://user-images.githubusercontent.com/62937814/139184044-70bf9b73-cc28-44b4-aa7f-99ab7a366d49.png)
- 
+### Loguetown<br>
+  - Mengakses lynx www.super.franky.A03.com/js <br>
+    ![image](https://user-images.githubusercontent.com/68326540/139530741-9a4681b7-35b0-4825-8b27-ee6b13880ba2.png)
+
 ### Kendala
 
 * tidak ada
