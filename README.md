@@ -114,6 +114,10 @@ EniesLobby akan dijadikan sebagai DNS Master, Water7 akan dijadikan DNS Slave, d
 - Semua node dapat mengakses ke internet<br>
   ```ping google.com```<br>
   ![image](https://user-images.githubusercontent.com/68326540/139208695-46318b1e-38ee-4c75-ae65-afec22a1c64c.png)
+ 
+### Kendala
+
+* tidak ada
 
 ## Soal 2
 Membuat domain website utama franky.yyy.com dengan alias www.franky.yyy.com pada folder kaizoku di EniesLobby.
@@ -158,6 +162,10 @@ Membuat domain website utama franky.yyy.com dengan alias www.franky.yyy.com pada
   ```ping www.franky.A03.com```
   ![image](https://user-images.githubusercontent.com/68326540/138803084-d516befa-c166-4b80-bb51-1c792c754483.png)
 
+### Kendala
+
+* tidak ada
+
 ## Soal 3
 Membuat subdomain super.franky.yyy.com dengan alias `www.super.franky.yyy.com` yang mengarah ke Skypie
 - EniesLobby
@@ -177,6 +185,9 @@ Membuat subdomain super.franky.yyy.com dengan alias `www.super.franky.yyy.com` y
   ```ping www.super.franky.A03.com```
   ![image](https://user-images.githubusercontent.com/68326540/138803466-300b9e32-202e-4675-b095-5b12abda0eeb.png)
 
+### Kendala
+
+* tidak ada
 
 
 ## Soal 4
@@ -213,10 +224,13 @@ Membuat reverse domain untuk domain utama
   ```
 - Loguetown dan Alabasta
   ```
-  host -t PTR 192.170.2.2
+  host -t PTR 192.170.2.4
   ```
-  ![image](https://user-images.githubusercontent.com/68326540/138804046-d3cdba2c-8c98-42f4-b357-e17385097e94.png)
-  ![image](https://user-images.githubusercontent.com/68326540/138804025-3a2bb5fa-21b6-4944-b8e8-9d0c89816ccd.png)
+  ![image](https://user-images.githubusercontent.com/68326540/139529932-8399d8e3-5f1a-4447-b303-90d3f2a569fd.png)
+
+### Kendala
+
+* Awalnya bingung menentukan IP untuk reverse DNS, tapi sudah bisa terselesaikan
 
 ## Soal 5
 Membuat Water7 sebagai DNS Slave untuk domain utama
@@ -267,6 +281,10 @@ Membuat Water7 sebagai DNS Slave untuk domain utama
   
   ```ping www.franky.A03.com```
   ![image](https://user-images.githubusercontent.com/68326540/138804827-87fc1da7-15ce-4aed-b098-d56279c6ff75.png)
+
+### Kendala
+
+* tidak ada
 
 ## Soal 6
 Membuat subdomain mecha.franky.yyy.com dengan alias `www.mecha.franky.yyy.com` yang didelegasikan dari EniesLobby ke Water7 dengan IP menuju ke Skypie dalam folder sunnygo
@@ -345,6 +363,9 @@ Membuat subdomain mecha.franky.yyy.com dengan alias `www.mecha.franky.yyy.com` y
   ```ping www.mecha.franky.A03.com```<br>
   ![image](https://user-images.githubusercontent.com/68326540/138806332-b37a5d22-de45-4664-a72f-8dccb4b086d7.png)
 
+### Kendala
+
+* tidak ada
 
 ## Soal 7
 Membuat subdomain melalui Water7 dengan nama general.mecha.franky.yyy.com dengan alias `www.general.mecha.franky.yyy.com` yang mengarah ke Skypie
@@ -364,6 +385,10 @@ Membuat subdomain melalui Water7 dengan nama general.mecha.franky.yyy.com dengan
   ![image](https://user-images.githubusercontent.com/68326540/138806581-d2dd255c-7215-4b43-9cab-ec6b8e67ed22.png)<br>
   ```ping www.general.mecha.franky.A03.com```
   ![image](https://user-images.githubusercontent.com/68326540/138806621-3a276c24-ca5d-4876-856a-40ee47e28c74.png)
+
+### Kendala
+
+* tidak ada
 
 ## Soal 8
 Setelah melakukan konfigurasi server, maka dilakukan konfigurasi Webserver. Pertama dengan webserver www.franky.yyy.com. Pertama, luffy membutuhkan webserver dengan DocumentRoot pada /var/www/franky.yyy.com.
@@ -419,7 +444,9 @@ Setelah melakukan konfigurasi server, maka dilakukan konfigurasi Webserver. Pert
   ```
   lynx http://www.franky.A03.com
   ```
-  
+### Kendala
+
+* tidak ada  
   
 ## Soal 9
 Setelah itu, Luffy juga membutuhkan agar url www.franky.yyy.com/index.php/home dapat menjadi menjadi www.franky.yyy.com/home. 
@@ -439,6 +466,10 @@ Setelah itu, Luffy juga membutuhkan agar url www.franky.yyy.com/index.php/home d
   ```
   lynx www.franky.A03.com/home
   ```
+
+### Kendala
+
+* tidak ada
   
 ## Soal 10
 Setelah itu, pada subdomain www.super.franky.yyy.com, Luffy membutuhkan penyimpanan aset yang memiliki DocumentRoot pada /var/www/super.franky.yyy.com
@@ -460,6 +491,9 @@ Setelah itu, pada subdomain www.super.franky.yyy.com, Luffy membutuhkan penyimpa
   lynx http://www.super.franky.A03.com
   ```
   
+### Kendala
+
+* tidak ada  
 ## Soal 11
 Akan tetapi, pada folder /public, Luffy ingin hanya dapat melakukan directory listing saja.
 ### Skypie<br>
@@ -482,6 +516,9 @@ Akan tetapi, pada folder /public, Luffy ingin hanya dapat melakukan directory li
   ```
   lynx http://www.super.franky.A03.com/public
   ```
+### Kendala
+
+* tidak ada
 
 ## Soal 12
 Tidak hanya itu, Luffy juga menyiapkan error file 404.html pada folder /error untuk mengganti error kode pada apache
@@ -505,6 +542,9 @@ Tidak hanya itu, Luffy juga menyiapkan error file 404.html pada folder /error un
   ```
   lynx http://www.super.franky.A03.com/abcdef
   ```
+### Kendala
+
+* Bingung mencari syntax yang diperlukan
 
 ## Soal 13
 Luffy juga meminta Nami untuk dibuatkan konfigurasi virtual host. Virtual host ini bertujuan untuk dapat mengakses file asset www.super.franky.yyy.com/public/js menjadi www.super.franky.yyy.com/js. 
@@ -523,6 +563,10 @@ Luffy juga meminta Nami untuk dibuatkan konfigurasi virtual host. Virtual host i
   ```
 
  ![image](https://user-images.githubusercontent.com/62937814/139184044-70bf9b73-cc28-44b4-aa7f-99ab7a366d49.png)
+ 
+### Kendala
+
+* tidak ada
 
 ## Soal 14
 Dan Luffy meminta untuk web www.general.mecha.franky.yyy.com hanya bisa diakses dengan port 15000 dan port 15500
