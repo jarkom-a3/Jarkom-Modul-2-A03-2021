@@ -665,7 +665,6 @@ a2ensite general.mecha.franky.A03.com
 ```
 echo Listen 15000 >> /etc/apache2/ports.conf
 echo Listen 15500 >> /etc/apache2/ports.conf
-
 ```
 
 5. Restart apache2
@@ -694,6 +693,35 @@ lynx www.general.mecha.franky.A03.com:15500
 
 ## Soal 15
 dengan autentikasi username luffy dan password onepiece dan file di /var/www/general.mecha.franky.yyy
+
+1. Buat user baru dengan nama `luffy` dengan password `onepiece`.
+
+```
+htpasswd -c /etc/apache2/.htpasswd luffy
+```
+
+Isi dari `/etc/apache2/.htpasswd`
+
+![luffypassword](https://user-images.githubusercontent.com/58259649/139531101-0eda1def-bca6-4635-9ea9-beeb69be81dd.jpg)
+
+2. Tambahkan line-line di bawah ke dalam `<VirtualHost *:15000>` dan `<VirtualHost *:15500>` di `/etc/apache2/sites-available/general.mecha.franky.A03.com.conf`.
+
+```
+        <Directory "var/www/general.mecha.franky.A03.com">
+                AuthType Basic
+                AuthName "Restricted Content"
+                AuthUserFile /etc/apache2/.htpasswd
+                Require valid-user
+        </Directory>
+```
+
+3. Coba akses `www.general.mecha.franky.A03.com:15000` atau `www.general.mecha.franky.A03.com:15500`.
+
+![15500-login-user](https://user-images.githubusercontent.com/58259649/139531458-d07abf3d-58de-42aa-9545-5a3dfaa87ac8.jpg)
+
+![15500-login-password](https://user-images.githubusercontent.com/58259649/139531462-f7e06e73-bc09-4a25-87e9-d91d500514e0.jpg)
+
+![15500-login-success](https://user-images.githubusercontent.com/58259649/139531464-233641e5-29b8-471b-af0c-97dd3085db09.jpg)
 
 ## Soal 16
 Dan setiap kali mengakses IP Skypie akan dialihkan secara otomatis ke www.franky.yyy.com
