@@ -723,6 +723,10 @@ Isi dari `/etc/apache2/.htpasswd`
 
 ![15500-login-success](https://user-images.githubusercontent.com/58259649/139531464-233641e5-29b8-471b-af0c-97dd3085db09.jpg)
 
+### Kendala
+
+* tidak ada
+
 ## Soal 16
 Dan setiap kali mengakses IP Skypie akan dialihkan secara otomatis ke www.franky.yyy.com
 
@@ -888,3 +892,7 @@ a2enmod rewrite
 4. Coba request gambar yang memiliki substring "franky".
 
 ![frankyimage](https://user-images.githubusercontent.com/58259649/139532196-9f43ddeb-6649-4ae5-804d-cc36e25c74fe.jpg)
+
+### Kendala
+
+* tidak ada
